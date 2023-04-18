@@ -1,0 +1,222 @@
+1.)
+import java.util.*;
+
+class practice {
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+
+        int positive = 0, negative = 0, odd = 0, even = 0, zeroes = 0, num = 0;
+
+        for (int i = 0; i < 20; i++) {
+            num = sc.nextInt();
+            if (num < 0) {
+                negative++;
+            } else if (num > 0) {
+                positive++;
+            } else {
+                zeroes++;
+            }
+            if (num % 2 == 0) {
+                even++;
+            } else {
+                odd++;
+            }
+        }
+        System.out.println("Positive " + positive);
+        System.out.println("Negative " + negative);
+        System.out.println("Even " + even);
+        System.out.println("Odd " + odd);
+        System.out.println("Zero " + zeroes);
+    }
+}
+
+2.)
+class practice {
+
+    public static void main(String args[]) {
+        int initial_arr[] = { 58, 24, 13, 15, 63, 9, 8, 81, 1, 78 };
+        int half1[] = new int[5];
+        int half2[] = new int[5];
+
+        for (int i = 0; i < initial_arr.length; i++) {
+            if (i < 5)
+                half1[i] = initial_arr[i];
+            else
+                half2[i - 5] = initial_arr[i];
+        }
+        for (int i = 0; i < initial_arr.length / 2; i++) {
+            System.out.println(half1[i] + ", " + half2[i]);
+        }
+
+    }
+}
+
+3.)
+class Parent {
+    public void print1() {
+        System.out.println("This is parent class");
+    }
+}
+
+class Child extends Parent {
+    public void print2() {
+        System.out.println("This is child class");
+    }
+}
+
+class practice {
+
+    public static void main(String args[]) {
+        Parent p = new Parent();
+        Child c = new Child();
+
+        p.print1();
+        c.print2();
+        c.print1();
+    }
+}
+
+4.)
+import java.util.*;
+
+class practice {
+
+    public static void main(String args[]) {
+        Employees arr[] = new Employees[10];
+
+        for (int i = 0; i < 10; i++) {
+            Scanner sc = new Scanner(System.in);
+            String name = sc.nextLine();
+            String salary = sc.nextLine();
+            String date = sc.nextLine();
+            arr[i] = new Employees(name, salary, date);
+        }
+
+        for (int i = 0; i < 10; i++) {
+            arr[i].print();
+        }
+    }
+}
+
+class Employees {
+    String name;
+    String salary;
+    String date;
+
+    Employees(String n, String s, String d) {
+        this.name = n;
+        this.salary = s;
+        this.date = d;
+    }
+
+    void print() {
+        System.out.print(this.name + ", ");
+        System.out.print(this.salary + ", ");
+        System.out.print(this.date + ", ");
+        System.out.println();
+    }
+}
+
+5.)
+import java.util.*;
+
+class practice {
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        String name = sc.nextLine();
+
+        for (int i = 0; i < name.lastIndexOf(' '); i++) {
+            if (i == 0 || name.charAt(i - 1) == ' ') {
+                System.out.print(name.charAt(i) + ".");
+            }
+        }
+        int lastNameStart = name.lastIndexOf(' ');
+        System.out.println(name.substring(lastNameStart, name.length()));
+
+    }
+}
+
+6.) equals() compares the value/content of the objects whereas '==' operator compares the reference or address of objects in the memory
+
+7.)  StringBuffer is thread safe as it is synchronized whereas StringBuilder is thread unsafe because two threads can call methods of StringBuilder simultaneosly
+
+8.) final in variable- the value of such variable can not be changed
+final in method- we can not override such methods
+final in class- we can not inherit a such class
+
+9.) finally block will not be executed if the program exits by System.exit() or if the process ends due to error
+
+10.) Shallow Copy- In shallow copy we do not allot a new reference for the copied object but the new copy points to the same memory location as the original and any change performed in any of them is refelcted to both 
+
+Deep copy- New memory is allotted creating a new reference and any changes in one do not affect the other
+
+11.) Arithmetic exception error
+
+12.) It is recommended because if the error occurs or not, resources should be freed and connection should be ended after program execution
+
+13.) Array index out of bounds exception
+
+14.) A. 2
+B. 1
+C. 3
+
+15.) we can use is.Empty() method
+
+16.) 
+
+17.) fill()
+
+18.)  Generics
+
+21.) false true
+
+22.)
+class Member {
+    String name, age, phone, address, salary;
+
+    void printSalary() {
+        System.out.println(salary);
+    }
+}
+
+class Employee extends Member {
+    String specialization;
+
+    void print() {
+        System.out.println(name + ", " + age + ", " + phone + ", " + address + ", " + salary);
+
+    }
+}
+
+class Manager extends Member {
+    String department;
+
+    void print() {
+        System.out.println(name + ", " + age + ", " + phone + ", " + address + ", " + salary);
+    }
+}
+
+class practice {
+
+    public static void main(String args[]) {
+        Employee a = new Employee();
+        a.name = "Test1";
+        a.age = "10";
+        a.phone = "1234566";
+        a.address = "wefwe";
+        a.salary = "1234422";
+
+        Manager b = new Manager();
+        b.name = "Test2";
+        b.age = "11";
+        b.phone = "1234566";
+        b.address = "wefwe";
+        b.salary = "1234422";
+
+        a.print();
+        b.print();
+    }
+}
+
