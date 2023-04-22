@@ -5,7 +5,7 @@ public class practice {
 
     public void flatten(List<Object> li) {
         for (Object o : li) {
-            if (o instanceof List) {
+            if (o instanceof Collection) {
 
                 flatten((List<Object>) o);
                 // System.out.println("recursive call");
